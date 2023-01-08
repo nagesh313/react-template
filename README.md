@@ -44,3 +44,16 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+functionalities added:
+Dont allow class component
+Prettier check and automatically format code before commit
+rules: {
+    "prettier/prettier": "error",
+    "react/prop-types": 0,
+    "linebreak-style": ["error", "unix"],
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
+  },
+Enforce file extension (Only TSX not JS not JSX)

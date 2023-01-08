@@ -1,8 +1,10 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  var test = "test";
+  console.log(test);
   return (
     <div className="App">
       <header className="App-header">
@@ -22,5 +24,9 @@ function App() {
     </div>
   );
 }
-
+// export class ClassReactComponent extends React.Component {
+//   render() {
+//     return <div>Not Allowed</div>;
+//   }
+// }
 export default App;

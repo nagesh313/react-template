@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -10,8 +14,12 @@
     "@types/node": "^16.18.11",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.10",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react-prefer-function-component": "^3.1.0",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.2",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.4",
     "web-vitals": "^2.1.4"
@@ -20,13 +28,35 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint-staged": "lint-staged",
+    "prettier-write": "prettier --write \"src/**/*.tsx\"",
+    "prettier-check": "prettier --check \"src/**/*.tsx\""
   },
   "eslintConfig": {
+    "plugins": [
+      "react-prefer-function-component"
+    ],
     "extends": [
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "plugin:react-prefer-function-component/recommended",
+      "plugin:prettier/recommended"
+    ],
+    "rules": {
+      "react/jsx-uses-vars": "error",
+      "accessor-pairs": "error",
+      "array-bracket-newline": "error",
+      "react/jsx-filename-extension": [
+        "error",
+        {
+          "extensions": [
+            ".ts",
+            ".tsx"
+          ]
+        }
+      ]
+    }
   },
   "browserslist": {
     "production": [
@@ -38,6 +68,11 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
     ]
   }
 }
