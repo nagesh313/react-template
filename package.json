@@ -46,6 +46,14 @@
     "rules": {
       "react/jsx-uses-vars": "error",
       "accessor-pairs": "error",
+      "max-lines": [
+        "error",
+        50
+      ],
+      "max-lines-per-function": [
+        "error",
+        20
+      ],
       "array-bracket-newline": "error",
       "react/jsx-filename-extension": [
         "error",
